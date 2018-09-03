@@ -38,9 +38,9 @@ def set_startlocs():
             [35.66666, 34.57222],
             [35.64116, 34.54694],
             [35.52297, 34.33972],
-            [35.36511, 34.07944],
-            [35.27869, 33.92500],
-            [35.16805, 33.90944]]
+            [35.365, 34.14],
+            [35.279, 33.98],
+            [35.168,  33.97]]
     locs = map(list, zip(*locs))
     return locs[0], locs[1]
 
@@ -57,7 +57,7 @@ def AddAge(particle, fieldset, time, dt):
 
 def run_globcurrent_particles():
     fset = set_hycom_grid()
-    fset.maxage = 90*86400
+    fset.maxage = 365*86400
     i0 = len(fset.U.time)
 
     lats, lons = set_startlocs()
@@ -74,7 +74,7 @@ def run_globcurrent_particles():
         pset[i].pfile.write(pset[i], pset[i][0].time)
 
     kernels = pset[0].Kernel(AdvectionRK4) + AddAge
-    for t in range(i0, 455, 1):
+    for t in range(i0, 730, 1):
         for pkey, p in pset.items():
             p.execute(kernels, starttime=p[0].time, runtime=delta(days=1), dt=-delta(minutes=5),
                       recovery={ErrorCode.ErrorOutOfBounds: OutOfBounds})
