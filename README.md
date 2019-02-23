@@ -1,0 +1,2 @@
+This repository holds the code used in the publication "The true depth of the Mediterranean plastic problem: Extreme microplastic pollution on marine turtle nesting beaches in Cyprus"
+Duncan, EM, J Arrowsmith, C Bain, AC Broderick, J Lee, K Metcalfe, SK Pikesley, RTE Snape, E van Sebille and BJ Godley (2018), Marine Pollution Bulletin, 136, 334-340 (https://doi.org/10.1016/j.marpolbul.2018.09.019)
